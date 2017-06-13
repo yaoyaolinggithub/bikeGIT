@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>比客网商设置</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<style type="text/css">
+			.message1 .mui-input-group:after,.message2 .mui-input-group:before,.message2 .mui-input-group:after {
+			    height: 0px;
+			}
+			/*邮箱修改*/
+			.message1 .mui-input-group{
+				padding-top:10px;
+			}
+			.message1 .mui-input-group .mui-input-row {
+			    height: 50px;
+			}
+			.message1 .mui-input-group .mui-input-row:after{
+				right: 10px;
+				left: 10px;
+			}
+			.message1 .mui-input-row label{
+				padding: 0px 0px 0px 10px;
+			    line-height: 50px;
+			    width: 30%;
+			    color: #666;
+			    font-size: 0.95rem;
+			    letter-spacing: 25px;
+			}
+			.message1 .mui-input-row .message1em{
+			    letter-spacing: 0px;
+			}
+			.message1 .mui-input-row label~input{
+				padding: 10px 10px 3px 0px;
+			    width: 70%;
+			    font-size: 0.95rem;
+			}
+			.message1 .mui-input-row span{
+				display: inline-block;
+			    width: 20%;
+			    line-height: 50px;
+			    text-indent: 22px;
+			    font-size: 0.95rem;
+			    color: #989da2;
+			    background: url(../images/setting-T1.png) no-repeat 0px 17px;
+			    background-size: 15px;
+			}
+			.message1 .mui-input-row .message1sp1{
+			    background: url(../images/setting-T1.png) no-repeat 0px -26px;
+			    background-size: 15px;
+			}
+			.message1 .mui-button-row {
+				height:auto;
+			}
+			.message1 .mui-button-row .mui-btn-danger{
+				margin-top: 5px;
+			    width: 95%;
+			    padding: 10px;
+			}
+			/*电话修改*/
+			.message2 .mui-input-group{
+				padding-top: 30px;
+			    padding-bottom: 20px;
+			    margin-bottom: 10px;
+			}
+			.message2 .mui-input-group .mui-input-row {
+			    height: 50px;
+			}
+			.message2 .mui-input-group .mui-input-row:after{
+				right: 10px;
+				left: 10px;
+			}
+			.message2 .mui-input-row label{
+				padding: 0px 0px 0px 10px;
+			    line-height: 50px;
+			    width: 30%;
+			    color: #666;
+			    font-size: 0.95rem;
+			}
+			.message2 .mui-input-row label~input{
+				padding: 10px 10px 3px 0px;
+			    width: 70%;
+			    font-size: 0.95rem;
+			}
+			.message2 .mui-button-row {
+				height:auto;
+			}
+			.message2 .mui-button-row .mui-btn-danger{
+				margin-top: 5px;
+			    width: 95%;
+			    padding: 10px;
+			}
+			.message2 .mui-input-row .message2em{
+			    width: 35%;
+    			padding-right: 0px;
+			    float: none;
+			}
+			.message2 .mui-input-row .message3em{
+			    display: inherit;
+			    width: 33%;
+			    margin: 7px 0px;
+    			padding: 10px 5px;
+			    font-size: 0.8rem;
+			    color: #999;
+			}
+			/*密码修改*/
+			.message3 .mui-input-group .mui-input-row:after {
+			    height: 0px;
+			}
+			.message3 .mui-input-group{
+				padding-top:10px;
+				padding-bottom: 20px;
+			}
+			.message3 h4{
+				font-size: 1.1rem;
+				text-indent: 10px;
+				color: #333;
+				margin-bottom: 20px;
+			}
+			.message3 .mui-input-group .mui-input-row {
+			    height: 40px;
+    			margin: 5px 15%;
+			}
+			.message3 .mui-input-group .mui-input-row:after{
+				right: 10px;
+				left: 10px;
+			}
+			.message3 .mui-input-row input{
+				height: 35px;
+			    padding: 0px;
+			    width: 100%;
+			    border: 1px solid rgba(102, 102, 102, 0.32);
+			    font-size: 0.9rem;
+			    border-radius: 3px;
+			    text-indent: 10px;
+			}
+			.message3 .mui-button-row {
+				height:auto;
+			}
+			.message3 .mui-button-row .mui-btn-danger{
+				margin-top: 5px;
+			    width: 95%;
+			    padding: 10px;
+			}
+			/*退出账号*/
+			#exit{
+				margin: 20px 3%;
+    			width: 94%;
+    			padding: 10px 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">信息修改</h1>
+		</header>
+		<div class="mui-content">
+			<!--邮箱修改-->
+			<div class="message1">
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>昵称</label>
+						<input type="text" placeholder="请输入昵称">
+					</div>
+					<div class="mui-input-row">
+						<label>性别</label>
+						<span class="message1sps message1sp1"> 保密</span>
+						<span class="message1sps"> 男</span>
+						<span class="message1sps"> 女</span>
+					</div>
+					<div class="mui-input-row">
+						<label class="message1em">邮箱</label>
+						<input type="text" placeholder="请输入邮箱">
+					</div>
+					<div class="mui-button-row">
+						<button type="button" class="mui-btn mui-btn-danger" onclick="return true;">确认修改</button>
+					</div>
+				</form>
+			</div>
+			<!--电话修改-->
+			<div class="message2">
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>手机</label>
+						<input type="text" placeholder="请输入手机号码">
+					</div>
+					<div class="mui-input-row">
+						<label >验证码</label>
+						<input class="message2em" type="text" placeholder="手机验证码">
+						<input class="message3em" type="button"  value="获取手机验证码"/>
+					</div>
+					<div class="mui-button-row">
+						<button type="button" class="mui-btn mui-btn-danger" onclick="return true;">确认修改</button>
+					</div>
+				</form>
+			</div>
+			<!--密码修改-->
+			<div class="message3">
+				<form class="mui-input-group">
+					<h4>密码修改</h4>
+					<div class="mui-input-row">
+						<input type="password" placeholder="原密码">
+					</div>
+					<div class="mui-input-row">
+						<input type="password" placeholder="新密码">
+					</div>
+					<div class="mui-input-row">
+						<input type="password" placeholder="确认密码">
+					</div>
+					<div class="mui-button-row">
+						<button type="button" class="mui-btn mui-btn-danger" onclick="return true;">确认修改</button>
+					</div>
+				</form>
+			</div>
+			<!--退出该账号-->
+			<button id='exit' type="button" class="mui-btn mui-btn-danger mui-btn-block">退出账号</button>
+			
+
+		</div>
+				
+	</body>
+	<script src="../js/mui.min.js "></script>
+	<script src="../js/app.js"></script>
+	<script>
+		mui.init();
+		//点击弹出修改成功提示
+		var buttonS = document.getElementsByTagName("button");
+		for(var i=0; i<buttonS.length-1; i++){
+			buttonS[i].addEventListener('tap', function() {
+				mui.toast('修改成功');
+			});
+		}
+		mui(".mui-input-row").on("tap",".message1sps",function(){
+		    var message1sps = document.querySelector(".mui-input-row>.message1sps.message1sp1");
+			if (this !== message1sps) {
+				message1sps.classList.remove('message1sp1');
+				this.classList.add('message1sp1');
+			}
+		});
+		 //退出操作******************
+		document.getElementById('exit').addEventListener('tap', function() {
+			if (mui.os.ios) {
+				app.setState({});
+				mui.openWindow({
+					url: 'about.html',
+					id: 'about',
+					show: {
+						aniShow: 'pop-in'
+					},
+					waiting: {
+						autoShow: false
+					}
+				});
+				return;
+			}
+			var btnArray = [{
+				title: "注销当前账号"
+			}, {
+				title: "直接关闭应用"
+			}];
+			plus.nativeUI.actionSheet({
+				cancel: "取消",
+				buttons: btnArray
+			}, function(event) {
+				var index = event.index;
+				switch (index) {
+					case 1:
+						//注销账号
+						app.setState({});
+						/*
+						 * 注意：
+						 * 1、因本示例应用启动页就是登录页面，因此注册成功后，直接显示登录页即可；
+						 * 2、如果真实案例中，启动页不是登录页，则需修改，使用mui.openWindow打开真实的登录页面
+						 */
+						plus.webview.getLaunchWebview().show("pop-in");
+						//若启动页不是登录页，则需通过如下方式打开登录页
+//						mui.openWindow({
+//							url: 'login.html',
+//							id: 'login',
+//							show: {
+//								aniShow: 'pop-in'
+//							}
+//						});
+						break;
+					case 2:
+						plus.runtime.quit();
+						break;
+				}
+			});
+		}, false);
+		 
+		
+	</script>
+
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>查看物流</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			/*订单商品*/
+			.logistisP1{
+				padding: 10px;
+				margin: 0;
+				font-size: 1rem;
+				color: black;
+			}
+			.logistisP2{
+				padding: 0;
+				margin: 0px 10px 20px;
+			}
+			.logistisP2-li1{
+				background: white;
+				border-radius: 3px;
+				padding: 5px 10px;
+				border: 1px solid #d7d7d7;
+			}
+			.logistisP2-li1 img{
+				margin: 5px;
+			    padding: 5px;
+			    border: 1px solid #eee;
+			    width: 70px;
+			}
+			.logistDiv1 p{
+				margin: 0;
+				padding: 0;
+				color: black;
+				font-size: 0.6rem;
+			}
+			.logistDiv1 .lgst2{
+				color: grey;
+			}
+			/*物流公司*/
+			.logistisP3{
+				margin: 10px;
+			}
+			.logistisP3 p{
+				color: black;
+			}
+			/*物流动态*/
+			.logistisP4{
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">查看物流</h1>
+		</header>
+		<div class="mui-content">
+			<!--订单商品-->
+			<p class="logistisP1">订单商品</p>
+			<ul class="logistisP2">
+				<li class="logistisP2-li1 mui-cf">
+					<img class="mui-pull-left" src="../images/I7.jpg">
+					<div class="logistDiv1">
+						<p class="mui-font2 lgst1">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+						<p class="lgst2">5000.00</p>
+						<p class="lgst3">共1件</p>
+					</div>
+				</li>
+				<li class="logistisP2-li1 mui-cf">
+					<img class="mui-pull-left" src="../images/I7.jpg">
+					<div class="logistDiv1">
+						<p class="mui-font2 lgst1">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+						<p class="lgst2">5000.00</p>
+						<p class="lgst3">共1件</p>
+					</div>
+				</li>
+				<li class="logistisP2-li1 mui-cf">
+					<img class="mui-pull-left" src="../images/I7.jpg">
+					<div class="logistDiv1">
+						<p class="mui-font2 lgst1">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+						<p class="lgst2">5000.00</p>
+						<p class="lgst3">共1件</p>
+					</div>
+				</li>
+			</ul>
+			<!--物流公司-->
+			<div class="logistisP3">
+				<p class="logistisp1">物流公司：<span class="logistiss1">申通物流</span></p>
+				<p class="logistisp2">运单号码：<span class="logistiss2">2017051917.49</span></p>
+			</div>
+			<!--物流动态-->
+			<div class="logistisP4">
+				<p class="logistisP4-h1">物流动态</p>
+				<p class="logistisP4-h1">快递公司参数异常：单号不存在或者已经过期</p>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		mui.plusReady(function(){
+			// 调整到订单详情
+			mui(".logistisP2").on("tap",".mui-pull-left",function(event){
+				mui.openWindow({
+					url: "../templete/details.html",
+					id: "details",
+//					preload: true,
+					styles: {
+						popGesture: 'none'
+					},
+					show: {
+						aniShow: 'none'
+					},
+					waiting: {
+						autoShow: true
+					}
+				});
+			},false);
+		})
+	</script>
+</html>

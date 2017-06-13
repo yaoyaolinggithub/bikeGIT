@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>在线充值</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<style type="text/css">
+			/*余额*/
+			.rechargeCont1{
+				padding: 10px;
+				border-top: 1px solid gainsboro;
+				border-bottom: 1px solid gainsboro;
+			}
+			.rechargeCont1 .rechageS1{
+				font-size: 1.1rem;
+			    font-weight: bold;
+			    color: #dd524d;
+			}
+			/*选择金额*/
+			.rechargeCont2{
+				display: flex;
+				flex-wrap: wrap;
+				align-content: space-between;
+			}
+			.rechargeCont2 .rechagesp1{
+				height: auto;
+				width: 29.3%;
+				padding: 0;
+				margin: 2%;
+				font-size: 0.95rem;
+				border: 1px solid gainsboro;
+				border-radius: 5px;
+				text-align: center;
+				line-height: 30px;
+				color: darkgray;
+				background: white;
+				position:relative;
+			}
+			.rechageFont{
+				height: 64px;
+				padding: 20px 10px;
+				font-size: 0.95rem;
+			    color: #484646;
+			    font-weight: bold;
+			}
+			.rechageFont .rechageFonts{
+				font-size: 1.5rem;
+				color: #dd524d;
+			}
+			.rechargeCont2 .rechagePh{
+				color: #525151;
+				border:1px solid #dd524d;
+				background: url(../images/rechargeL1.png) no-repeat  right bottom/18px white;
+			}
+			/*充值方式*/
+			.rechargeCont3{
+				padding: 10px;
+			}
+			.rechargeCont3 button{
+				font-size: 1.2rem;
+			    padding: 10px 0px;
+			    margin-bottom: 20px;
+			    color: #fff;
+			    border: 1px solid #dd524d;
+			    background-color: #dd524d;
+			}
+			/* 测试待删除 */
+			#outputCont #output{
+				/*width:100%;
+				text-align: center;
+				padding: 10px;
+				color: red;*/
+			}
+			#outputCont #output span{
+				width:100%;
+				text-align: center;
+				padding: 10px;
+				color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">在线充值</h1>
+		</header>
+		<div class="mui-content">
+			<!--余额-->
+			<p class="rechargeCont1">
+				您的当前余额：<span class="rechageS1">1234.56</span> 元
+			</p>
+			<!--选择金额-->
+			<div class="rechargeCont2">
+				<span class="rechagesp1 rechagePh">10元</span>
+				<span class="rechagesp1">50元</span>
+				<span class="rechagesp1">100元</span>
+				<span class="rechagesp1">500元</span>
+				<span class="rechagesp1">1000元</span>
+				<input type="text" class="rechagesp1 rechage" placeholder="请输入金额" onblur="if(this.value ==this.value) this.value = ''">
+				<div class="rechageFont">充值金额：<span class="rechageFonts" id="total"></span> 元</div>
+			</div>
+			<!--充值方式-->
+			<div class="rechargeCont3 " id="dcontent">
+				<p id="info" style="padding: 0 1em;text-align:left;">支付通道信息：</p>
+				<!--<button type="button" class="mui-btn mui-btn-danger mui-btn-block">微信充值</button>-->
+				<!--<button type="button" class="mui-btn mui-btn-danger mui-btn-block">支付宝充值</button>-->
+			</div>
+			<div id="outputCont">
+				<div id="output">
+					Payment模块管理支付功能，可通过js调用第三方支付服务。通过plus.payment可获取支付管理对象。
+				</div>
+			</div>
+			
+			
+		</div>
+	</body>
+	<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init();
+		var rechagesps = document.querySelectorAll(".rechagesp1");
+		var rechageFonts = document.querySelector(".rechageFonts");
+		var rechagePh = document.querySelector(".rechagePh");
+		var listsTap = document.querySelector(".rechargeCont2>.rechagesp1.rechagePh");
+		var rechage = document.querySelector(".rechage");
+		rechageFonts.innerHTML = parseInt(listsTap.innerHTML);
+		mui(".rechargeCont2").on("tap",".rechagesp1",function(){
+		    var listNum = document.querySelector(".rechargeCont2>.rechagesp1.rechagePh");
+			if (this !== listNum) {
+				rechageFonts.style.display = "inline-block";
+				this.classList.add('rechagePh');
+				if(listNum){listNum.classList.remove('rechagePh')}
+				if(this.tagName === "INPUT"){
+					this.classList.remove('rechagePh');
+					this.style.border = "1px solid #dd524d";
+					rechageFonts.style.display = "none";
+				}else{
+					rechage.style.border = "1px solid gainsboro";
+				}
+				rechageFonts.innerHTML = parseInt(this.innerHTML);
+			}
+		});
+		rechage.addEventListener("input",function(event){
+			rechageFonts.style.display = "inline-block";
+			rechageFonts.innerHTML = rechage.value;
+		},false);
+		
+		// 支付功能   
+			var pays={};
+			function plusReady(){
+				// 获取支付通道
+				plus.payment.getChannels(function(channels){
+					var content=document.getElementById('dcontent');
+					var info=document.getElementById('info');
+					var txt='支付通道信息：';
+					for(var i in channels){
+						var channel=channels[i];
+						if(channel.id=='qhpay'||channel.id=='qihoo'){	// 过滤掉不支持的支付通道：暂不支持360相关支付
+							continue;
+						}
+						pays[channel.id]=channel;
+						txt += 'id:'+channel.id+', ';
+						txt += 'description:'+channel.description+', ';
+						txt += 'serviceReady:'+channel.serviceReady+'； ';
+						var de=document.createElement('button');
+						de.setAttribute('type', 'button');
+						de.setAttribute('class', 'mui-btn mui-btn-danger mui-btn-block');
+						de.setAttribute('onclick', 'las(this.id)');
+						de.id=channel.id;
+						de.innerText=channel.description+'支付';
+						content.appendChild(de);
+//						checkServices(channel);
+					}
+					info.innerText=txt;
+				},function(e){
+					outLine('获取支付通道失败：'+e.message);
+				});
+			}
+			
+			document.addEventListener('plusready', plusReady, false);
+			// 检测是否安装支付服务
+			function checkServices(pc){
+				if(!pc.serviceReady){
+					var txt=null;
+					switch(pc.id){
+						case 'alipay':
+						txt='检测到系统未安装“支付宝快捷支付服务”，无法完成支付操作，是否立即安装？';
+						break;
+						default:
+						txt='系统未安装“'+pc.description+'”服务，无法完成支付，是否立即安装？';
+						break;
+					}
+					plus.nativeUI.confirm(txt, function(e){
+						if(e.index==0){
+							pc.installService();
+						}
+					}, pc.description);
+				}
+			}
+			
+			var w=null;
+			var PAYSERVER='http://demo.dcloud.net.cn/payment/?payid=';
+			// 支付
+			function las(id){
+				if(w){return;}//检查是否请求订单中
+				if(id==='appleiap'){
+					outSet('应用内支付');
+					clicked('payment_iap.html');
+					return;
+				}
+				outSet('----- 请求支付 -----');
+				var url=PAYSERVER;
+				if(id=='alipay'||id=='wxpay'){
+					url+=id;
+				}else{
+					plus.nativeUI.alert('当前环境不支持此支付通道！', null, '待定支付');
+					return;
+				}
+				var appid=plus.runtime.appid;
+				if(navigator.userAgent.indexOf('StreamApp')>=0){
+					appid='Stream';
+				}
+				url+='&appid='+appid+'&total=';
+				
+				w=plus.nativeUI.showWaiting();
+				// 请求支付订单
+				var amount = document.getElementById('total').innerText;
+				var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=function(){
+					switch(xhr.readyState){
+						case 4:
+						w.close();w=null;
+						if(xhr.status==200){
+							outLine('----- 请求订单成功 -----');
+							outLine(xhr.responseText);
+							var order=xhr.responseText;
+							plus.payment.request(pays[id],order,function(result){
+								outLine('----- 支付成功 -----');
+								outLine(JSON.stringify(result));
+								plus.nativeUI.alert('支付成功！我们会为您尽快送货！',function(){
+									back();
+								},'待定支付');
+							},function(e){
+								outLine('----- 支付失败 -----');
+								outLine('['+e.code+']：'+e.message);
+								plus.nativeUI.alert('更多错误信息请咨询客服', null, '支付失败：'+e.code);
+							});
+						}else{
+							outLine('----- 请求订单失败 -----');
+							// 支付失敗說明
+							outLine( xhr.status );
+							plus.nativeUI.alert('获取订单信息失败！', null, '待定支付');
+						}
+						break;
+						default:
+						break;
+					}
+				}
+				xhr.open('GET',url+amount);
+				outLine('请求支付订单：'+url+amount);
+				xhr.send();
+			}	
+	</script>
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>搜索页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			/*头部*/
+			#serchhead {
+			    padding: 0;
+			}
+			#serchhead .mui-icon {
+			    padding: 0;
+			    margin: 0;
+			    font-size: 40px;
+			    color: rgb(132, 134, 137); 
+			}
+			#serchhead h1 {
+			    font-size: 1.1rem;
+			    color: #666; 
+			}
+			/*备份头部搜索*/
+			/*#serchhead .seaript{
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			input[type=text]{
+			    line-height: 21px;
+			    width: 85%;
+			    height: 35px;
+			    padding: 10px 15px;
+			    -webkit-user-select: text;
+			    border: 1px solid rgba(0,0,0,.2);
+			    border-radius: 3px 0px 0px 3px;
+			    outline: 0;
+			    background-color: #fff;
+			    -webkit-appearance: none;
+			    border: 1px solid rgb(132, 134, 137); 
+			    margin: 2.5px 0px;
+			    float: left;
+			    font-size: 0.9rem;
+			}
+			#serchhead .seaript .searspn{
+				display: inline-block;
+				width: 35px;
+				height: 35px;
+				border: 1px solid rgb(132, 134, 137); 
+				border-left: 0px;
+				float: left;
+				margin: 2.5px 0px;
+				border-radius: 0px 3px 3px 0px;
+				background: url(../images/seapage.png) no-repeat center;
+				background-size: 63%;
+			}*/
+			#searpageCont{
+				background: white;
+			}
+			.searK1 {
+				margin: 20px 10px;
+				position: relative;
+			}
+			/*搜索框*/
+			.searB1 {
+				width:70px;
+				height: 30px;
+				font-size: 1rem;
+				background: #E31939;
+				color: white;
+				line-height: 30px;
+				text-align: center;
+			}
+			#searpageCont .searB2 {
+				border: 2px solid #E31939;
+				border-radius: 0px;
+				font-size: 0.9rem;
+			}
+			#searpageCont .searB3 {
+				width: 25px;
+			    height: 30px;
+			    background: url(../images/seapage.png) no-repeat center;
+			    background-size: 100%;
+			    position: absolute;
+			    right: 3%;
+			    bottom: 20px;
+			    border: 0px;
+			}
+			/*热门搜索*/
+			.searK2{
+				padding: 10px;
+			}
+			.searP1{
+				background: url(../images/seapage.png) no-repeat left;
+			    background-size:15px;
+			    color: #333;
+			    text-indent: 20px;
+			}
+			.searP2 .searPps{
+				display: inline-block;
+				padding: 0px 10px;
+				margin-bottom: 10px;
+				margin-right: 10px;
+				float: left;
+				font-size: 0.9rem;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 3px;
+				color: #666;
+				border: 1px solid gainsboro;
+			}
+		</style>
+	</head>
+
+	<body style="background: white;">
+		<!--备份头部搜索-->
+		<!--<header class="mui-bar mui-bar-nav" id="serchhead">
+		    <a class="mui-action-back mui-icon mui-icon-closeempty mui-pull-left"></a>
+		    <div class="seaript mui-cf">
+		    	<input type="text" value placeholder="超级品牌日，全场底价" >
+		    	<span class="searspn"></span>
+		    </div>
+		</header>-->
+		<header class="mui-bar mui-bar-nav" id="serchhead">
+		    <a class="mui-action-back mui-icon mui-icon-closeempty mui-pull-right"></a>
+		    <h1 class="mui-title">关键搜索</h1>
+		</header>
+		<div class="mui-content" id="searpageCont">
+		    <!--搜索框-->
+		    <div class="searK1">
+		    	<div class="searB1">宝贝</div>
+		    	<input class="searB2" placeholder="请输入关键词" type="text" >
+		    	<input class="searB3" type="button" >
+		    </div>
+		    <!--热门搜索-->
+		    <div class="searK2">
+		    	<p class="searP1">热门搜索</p>
+		    	<div class="searP2 mui-cf">
+		    		<span class="searPps">手机</span>
+		    		<span class="searPps">手机</span>
+		    		<span class="searPps">手机</span>
+		    		<span class="searPps">手机</span>
+		    		<span class="searPps">手机</span>
+		    		<span class="searPps">手机</span>
+		    		
+		    	</div>
+		    </div>
+		</div>
+		
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		// 小统一分类批量点击进入列表页事件
+		var searB3 = document.querySelector(".searB3");
+		mui.plusReady(function() {
+			function singleBtn(singElent,singHtml,singId,singFhi){
+				singElent.addEventListener('tap',function(event){
+					mui.openWindow({
+						url: singHtml,
+						id: singId,
+	//					preload: true,
+						styles: {
+							popGesture: 'none'
+						},
+						show: {
+						    aniShow: singFhi
+						},
+						waiting: {
+							autoShow: true
+						}
+					})
+				},false)
+			}
+			singleBtn(searB3,"../templete/list.html","list",'pop-in');
+			// 批量进入
+			function dkipsPages(IDBtns,Skips,skipPages,skipIDs){
+				mui(IDBtns).on('tap',Skips,function(event){
+					mui.openWindow({
+						url: skipPages,
+						id: skipIDs,
+//						preload: true,
+						styles: {
+							popGesture: 'none'
+						},
+						show: {
+							aniShow: 'none'
+						},
+						waiting: {
+							autoShow: true
+						}
+					});
+				}, false);
+			}
+			dkipsPages(".searK2",'.searPps',"../templete/list.html","list");
+		});
+	</script>
+</html>

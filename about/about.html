@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<style type="text/css">
+			/*头部*/
+			.aboutUl1{
+				width: 100%;
+				height: auto;
+				background: url(../images/aboutBJ.png) no-repeat;
+				background-size: 100%;
+			}
+			.aboutUl1 .mui-left-se1,.aboutUl1 .mui-left-se2{
+				width: 100%;
+				position: relative;
+			}
+			.aboutUl1 .mui-left-se1 .mui-se1{
+				width: 48px;
+			    height: 28px;
+			    text-align: center;
+			    line-height: 29px;
+			    font-size: 0.95rem;
+			    display: block;
+			    float: right;
+			    margin: 10px 5px;
+			    color: white;
+			    border-radius: 13px;
+			    background: rgba(51, 47, 47, 0.39);
+			}
+			.aboutUl1 .mui-left-se2 .mui-se2{
+			    height: 28px;
+			    text-align: center;
+			    font-size: 0.95rem;
+			    float: right;
+			    margin: 0px 5px;
+			    color: white;
+			}
+			.aboutUl1 .mui-left-se2 img{
+			    height: 80px;
+			    border-radius: 50%;
+			    margin: 0px 5%;
+			    position: absolute;
+			    bottom: -35px;
+			}
+			.aboutUl1 .mui-hed-left{
+				width: 100%;
+				text-align: center;
+			} 
+			.mui-hed-left:after {
+			    content: "";
+			    display: block;
+			    height: 0;
+			    clear: both;
+			    visibility: hidden;
+			}
+			.aboutUl1 .mui-hed-left .mui-left-zu{
+				color:#fff ;
+				line-height: 4rem;
+				font-size: 1rem;
+			}
+			/*信息列表*/
+			.aboutUl2{
+				width:100%;
+				margin: 0;
+				padding: 0;
+				background-color: #ffc7c7;;
+				display: flex;
+				border-bottom: 1px solid #d4d4d4;
+			}
+			.aboutUl2 .aboutLi1:nth-child(1){
+			    width: 31%;
+			}
+			.aboutUl2 .aboutLi1:nth-child(2),.aboutUl2 .aboutLi1:nth-child(3){
+			    border-right:1px solid gainsboro;
+			}
+			.aboutUl2 .aboutLi1{
+				display: inline-block;
+				margin: 10px 0px;
+			    width: 23%;
+			    text-align: center;
+			    font-size:0.9rem ;
+			}
+			.aboutUl2 .aboutLi1 .abLi1p1{
+				font-size:1.2rem ;
+				margin: 10px 0px 1px; 
+				color: #4a4646;
+			}
+			.aboutUl2 .aboutLi1 .abLi1p2{
+				font-size: 0.9rem;
+				margin: 0px 0px 5px; 
+				color: black;
+			}
+			/*订单列表*/
+			#indent .aboutUl3{
+				margin: 10px 0px;
+				border: 0px;
+				background-color: white;
+			}
+			#indent .mui-table-view-cell.mui-active,#indent .mui-navigate-right.mui-active{
+			    background-color: #fff;
+			}
+			#indent .aboutUl3 .mui-table-view-cell {
+			    padding:5px 0 ;
+			    width: 33.3%;
+			    border: 0px;
+			}
+			#indent .aboutUl3 .mui-table-view-cell:nth-child(4) {
+			    width: 96%;
+			    margin: 0px 2%;
+			    padding: 5px;
+			    border-top: 1px solid gainsboro;
+			}
+			#indent .aboutUl3 .mui-media .mui-icon {
+			    font-size: 0.8rem;
+			    color:#e41735 ;
+			}
+			#indent .aboutUl3 .mui-table-view-cell .mui-media-body{
+			    margin-top: 3px;
+			    font-size: 0.8rem;
+			}
+			.aboutUl3 .mui-navigate-right:after {
+			    right: -5px;
+    			font-size: 1.3rem;
+			    content: '\e583';
+			}
+			#indent .aboutUl3 .mui-table-view-cell>a:not(.mui-btn) {
+			    margin: 0;
+			    padding: 5px 0;
+			}
+			#indent .aboutUl3 .mui-table-view-cell:nth-child(1)>a:not(.mui-btn),#indent .aboutUl3 .mui-table-view-cell:nth-child(2)>a:not(.mui-btn) {
+			    border-right: 1px solid gainsboro;
+			}
+			.aboutUl3 .aboutU3S1{
+				width: 30px;
+			    height: 30px;
+			    display: inline-block;
+			    background: url(../images/about-li1.png) 0 0px no-repeat;
+			    background-size: 100%;
+			    float: left;
+			    text-indent: 38px;
+			    font-size: 1rem;
+			    line-height: 30px;
+			    color: #484242;
+			}
+			.aboutUl3 .aboutU3S2{
+			    display: inline-block;
+			    float: right;
+			    margin-right: 22px;
+			    font-size: 0.8rem;
+			    line-height: 30px;
+			    color: rgba(95, 91, 91, 0.54);
+			}
+			/*列表信息1*/
+			#indent .aboutUl4{
+				margin: 10px 0px;
+				border: 0px;
+				background-color: white;
+			}
+			#indent .aboutUl4 .mui-table-view-cell {
+			    padding: 5px 10px;
+			}
+			.aboutUl4 .mui-table-view-cell:after {
+			    left: 46px;
+			}
+			#indent .aboutUl4 .mui-table-view-cell>a:not(.mui-btn) {
+			    margin: 0;
+			    padding: 5px 0;
+			}
+			.aboutUl4 .mui-navigate-right:after {
+			    right: -5px;
+    			font-size: 1.3rem;
+			    content: '\e583';
+			}
+			.aboutUl4 .aboutU3S2{
+			    display: inline-block;
+			    float: right;
+			    margin-right: 22px;
+			    font-size: 0.8rem;
+			    line-height: 30px;
+			    color: rgba(95, 91, 91, 0.54);
+			}
+			.aboutUl4 .aboutU3S1p1{
+				width: 30px;
+			    height: 30px;
+			    display: inline-block;
+			    background: url(../images/about-li1.png) 0 -43px no-repeat;
+			    background-size: 100%;
+			    float: left;
+			    text-indent: 38px;
+			    font-size: 1rem;
+			    line-height: 30px;
+			    color: #484242;
+			}
+			.aboutUl4 .aboutU3S1p2{
+				width: 30px;
+			    height: 30px;
+			    display: inline-block;
+			    background: url(../images/about-li1.png) 0 -86px no-repeat;
+			    background-size: 100%;
+			    float: left;
+			    text-indent: 38px;
+			    font-size: 1rem;
+			    line-height: 30px;
+			    color: #484242;
+			}
+			.aboutUl4 .aboutU3S1p3{
+				width: 30px;
+			    height: 30px;
+			    display: inline-block;
+			    background: url(../images/about-li1.png) 0 -129px no-repeat;
+			    background-size: 100%;
+			    float: left;
+			    text-indent: 38px;
+			    font-size: 1rem;
+			    line-height: 30px;
+			    color: #484242;
+			}
+			.aboutUl4 .aboutU3S1p4{
+				width: 30px;
+			    height: 30px;
+			    display: inline-block;
+			    background: url(../images/about-li1.png) 0 -434px no-repeat;
+			    background-size: 100%;
+			    float: left;
+			    text-indent: 38px;
+			    font-size: 1rem;
+			    line-height: 30px;
+			    color: #484242;
+			}
+			.aboutUl4 .aboutU3S1p5{
+				width: 30px;
+			    height: 30px;
+			    display: inline-block;
+			    background: url(../images/about-li1.png) 0 -215px no-repeat;
+			    background-size: 100%;
+			    float: left;
+			    text-indent: 38px;
+			    font-size: 1rem;
+			    line-height: 30px;
+			    color: #484242;
+			}
+			/*列表信息2*/
+			#indent .aboutUl5{
+				margin: 10px 0px;
+				border: 0px;
+				background-color: white;
+			}
+			#indent .aboutUl5 .mui-table-view-cell {
+			    padding: 5px 10px;
+			}
+			.aboutUl5 .mui-table-view-cell:after {
+			    left: 46px;
+			}
+			#indent .aboutUl5 .mui-table-view-cell>a:not(.mui-btn) {
+			    margin: 0;
+			    padding: 5px 0;
+			}
+			.aboutUl5 .mui-navigate-right:after {
+			    right: -5px;
+    			font-size: 1.3rem;
+			    content: '\e583';
+			}
+			.aboutUl5 .aboutU3S2p1{
+				width: 30px;
+			    height: 30px;
+			    display: inline-block;
+			    background: url(../images/about-li1.png) 0 -172px no-repeat;
+			    background-size: 100%;
+			    float: left;
+			    text-indent: 38px;
+			    font-size: 1rem;
+			    line-height: 30px;
+			    color: #484242;
+			}
+			.aboutUl5 .aboutU3S2p2{
+				width: 30px;
+			    height: 30px;
+			    display: inline-block;
+			    background: url(../images/about-li1.png) 0 -215px no-repeat;
+			    background-size: 100%;
+			    float: left;
+			    text-indent: 38px;
+			    font-size: 1rem;
+			    line-height: 30px;
+			    color: #484242;
+			}
+			.aboutUl5 .aboutU3S2p3{
+				width: 30px;
+			    height: 30px;
+			    display: inline-block;
+			    background: url(../images/about-li1.png) 0 -390px no-repeat;
+			    background-size: 100%;
+			    float: left;
+			    text-indent: 38px;
+			    font-size: 1rem;
+			    line-height: 30px;
+			    color: #484242;
+			}
+			.aboutUl5 .aboutU3S2p4{
+				width: 30px;
+			    height: 30px;
+			    display: inline-block;
+			    background: url(../images/about-li1.png) 0 0px no-repeat;
+			    background-size: 100%;
+			    float: left;
+			    text-indent: 38px;
+			    font-size: 1rem;
+			    line-height: 30px;
+			    color: #484242;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="mui-content" id="indent">
+			<!--头部-->
+			<div  class="aboutUl1">
+				<div class="mui-left-se1 mui-cf">
+					<span class="mui-se1">设置</span>
+				</div>
+				<div class="mui-hed-left">
+					<span class="mui-left-zu">用户名</span>
+				</div>
+				<div class="mui-left-se2 mui-cf">
+					<img src="../images/user-photo.png"/>
+					<span class="mui-se2">黄金会员</span>
+				</div>
+			</div>
+			<!--信息列表-->
+			<ul class="aboutUl2">
+				<li  class="aboutLi1">
+					
+				</li>
+				<li  class="aboutLi1 aboutLi1-1">
+					<p class="abLi1p1">3333</p>
+					<p class="abLi1p2">我的订单</p>
+				</li>
+				<li  class="aboutLi1 aboutLi1-2">
+					<p class="abLi1p1">3333</p>
+					<p class="abLi1p2">我的收藏</p>
+				</li>
+				<li  class="aboutLi1 aboutLi1-3">
+					<p class="abLi1p1">3333</p>
+					<p class="abLi1p2">我的评价</p>
+				</li>
+				
+			</ul>
+		    <!--订单列表-->
+			<ul class="mui-table-view mui-grid-view mui-grid-9 aboutUl3">
+			    <li class="mui-table-view-cell mui-media mui-col-xs-2 mui-col-sm-3">
+			    	<a href="#">
+			        	<span class="mui-icon">3333</span>
+			        	<div class="mui-media-body">余额</div>
+			    	</a>
+			    </li>
+			    <li class="mui-table-view-cell mui-media mui-col-xs-2 mui-col-sm-3"><a href="#">
+			        <span class="mui-icon">3333</span>
+			        <div class="mui-media-body">优惠券</div></a></li>
+			    <li class="mui-table-view-cell mui-media mui-col-xs-2 mui-col-sm-3"><a href="#">
+			        <span class="mui-icon">3333</span>
+			        <div class="mui-media-body">积分</div></a></li>
+			    <li class="mui-table-view-cell aboutUl3li4">
+			        <a class="mui-navigate-right"><span class="aboutU3S1">我的钱包</span><span class="aboutU3S2">查看我的钱包</span></a>
+			    </li>
+			</ul>
+			<!--列表信息1-->
+			<ul class="mui-table-view aboutUl4">
+			    <li class="mui-table-view-cell">
+			        <a class="mui-navigate-right"><span class="aboutU3S1p1">全部订单</span><span class="aboutU3S2">查看订单</span></a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			       	<a class="mui-navigate-right"><span class="aboutU3S1p2">我的优惠券</span></a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a class="mui-navigate-right"><span class="aboutU3S1p3">我的评价</span><span class="aboutU3S2">查看评价</span></a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a class="mui-navigate-right"><span class="aboutU3S1p4">我的收藏</span></a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a class="mui-navigate-right"><span class="aboutU3S1p5">申请体现</span></a>
+			    </li>
+			</ul>
+			<!--列表信息2-->
+			<ul class="mui-table-view aboutUl5">
+			    <li class="mui-table-view-cell">
+			        <a class="mui-navigate-right"><span class="aboutU3S2p1">地址管理</span></a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			       	<a class="mui-navigate-right"><span class="aboutU3S2p2">积分余额</span></a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a class="mui-navigate-right"><span class="aboutU3S2p3">售后服务</span></a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a class="mui-navigate-right"><span class="aboutU3S2p4">我的发展收益</span></a>
+			    </li>
+			</ul>
+			
+		</div>
+		
+	</body>
+	<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init();
+		var abologBtn = document.querySelector('.mui-left-zu');
+		var favoBtn = document.querySelector('.aboutU3S1p2');
+		var muiSeBtn = document.querySelector(".mui-se1");
+//		var aboutserBtn = document.querySelector(".aboutU3S2p3");
+		var aboutLi11 = document.querySelector(".aboutLi1-1");
+		var aboutLi12 = document.querySelector(".aboutLi1-2");
+		var aboutLi13 = document.querySelector(".aboutLi1-3");
+		var aboutUl3li4 = document.querySelector(".aboutUl3li4");
+		var aboutU3S1p1 = document.querySelector(".aboutU3S1p1");
+		var aboutU3S1p3 = document.querySelector(".aboutU3S1p3");
+		var aboutU3S1p4 = document.querySelector(".aboutU3S1p4");
+		var aboutU3S1p5 = document.querySelector(".aboutU3S1p5");
+		var aboutU3S2p1 = document.querySelector(".aboutU3S2p1");
+		var aboutU3S2p2 = document.querySelector(".aboutU3S2p2"); 
+		var aboutU3S2p3 = document.querySelector(".aboutU3S2p3");
+		var aboutU3S2p4 = document.querySelector(".aboutU3S2p4");
+		mui.plusReady(function(){
+			function singleBtn(singElent,singHtml,singId,singFhi){
+				singElent.addEventListener('tap',function(){
+					mui.openWindow({
+						url: singHtml,
+						id: singId,
+//						preload: true,
+						styles: {
+							popGesture: 'none'
+						},
+						show: {
+						    aniShow: singFhi
+						},
+						waiting: {
+							autoShow: true
+						}
+					})
+				})
+			}
+			// 跳转到登录页面
+			singleBtn(abologBtn,"../templete/login.html","login",'none');
+			// 跳转到设置页面
+			singleBtn(muiSeBtn,"setting.html","setting","pop-in");
+			// 跳转到客服页面 转为了退换货
+//			singleBtn(aboutserBtn,"../templete/service.html","service","pop-in");
+			// 跳转到优惠劵
+			singleBtn(favoBtn,"favorable.html","favorable","pop-in");
+			// aboutLi1-1 跳转到我的订单
+			singleBtn(aboutLi11,"about-d1.html","about-d1","pop-in");
+			// aboutLi1-2 跳转到我的收藏
+			singleBtn(aboutLi12,"collect.html","collect","pop-in");
+			// aboutLi1-3 跳转到我的评论
+			singleBtn(aboutLi13,"criticism.html","criticism","pop-in");
+			// aboutUl3li4 跳转到我的钱包
+			singleBtn(aboutUl3li4,"notecase.html","notecase","pop-in");
+			// 全部订单 跳转到我的订单
+			singleBtn(aboutU3S1p1,"about-d1.html","about-d1","pop-in");
+			// 我的评价 跳转到我的评价
+			singleBtn(aboutU3S1p3,"criticism.html","criticism","pop-in");
+			// 我的收藏 跳转到我的收藏
+			singleBtn(aboutU3S1p4,"collect.html","collect","pop-in");
+			// 申请体现 跳转到提现信息
+			singleBtn(aboutU3S1p5,"account.html","account","pop-in");
+			// 地址管理 跳转到地址列表
+			singleBtn(aboutU3S2p1,"administration.html","administration","pop-in");
+			//积分余额 跳转到积分管理
+			singleBtn(aboutU3S2p2,"balance.html","balance","pop-in");
+			//售后服务 跳转到退换货
+			singleBtn(aboutU3S2p3,"afterSale.html","afterSale","pop-in");
+			//发展收益 跳转到暂没开放功能
+			singleBtn(aboutU3S2p4,"flaw.html","flaw","none");
+		});
+	</script>
+</html>
